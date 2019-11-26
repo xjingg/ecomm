@@ -31,7 +31,7 @@ const Navbar = () => (
           />
         </Box>
         <Heading size="xs" color="orange">
-          BrewHaha
+          Perfume Everyday
         </Heading>
       </Box>
     </NavLink>
