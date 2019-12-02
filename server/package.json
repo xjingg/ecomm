@@ -12,6 +12,7 @@
     "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
   },
   "devDependencies": {
+    "@types/stripe": "^7.13.11",
     "babel-eslint": "^7.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^13.0.0",
@@ -19,10 +20,11 @@
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.15",
     "start-mongodb": "^1.0.9",
     "strapi": "3.0.0-alpha.19",
-    "strapi-hook-mongoose": "3.0.0-alpha.19"
+    "strapi-hook-mongoose": "3.0.0-alpha.19",
+    "stripe": "^7.14.0"
   },
   "author": {
     "name": "jingxiong",

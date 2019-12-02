@@ -44,7 +44,13 @@ class _CheckoutForm extends React.Component {
   };
 
   handleSubmitOrder = async () => {
-    const { cartItems, city, address, postalCode } = this.state;
+    const {
+      cartItems,
+      city,
+      address,
+      postalCode,
+      confirmationEmailAddress
+    } = this.state;
 
     const amount = calculateAmount(cartItems);
     // Process order
@@ -60,6 +66,14 @@ class _CheckoutForm extends React.Component {
         postalCode,
         address,
         token
+      });
+      await strapi.request("POST", "/email", {
+        data: {
+          to: confirmationEmailAddress,
+          subject: `Order Confirmation - BrewHaha ${new Date(Date.now())}`,
+          text: "Your order has been processed",
+          html: "<bold>Expect your order to arrive in 2-3 shipping days</bold>"
+        }
       });
       this.setState({ orderProcessing: false, modal: false });
       clearCart();
@@ -292,7 +306,7 @@ const ConfirmationModal = ({
 const CheckoutForm = withRouter(injectStripe(_CheckoutForm));
 
 const Checkout = () => (
-  <StripeProvider apiKey="pk_test_CN8uG9E9KDNxI7xVtdN1U5Be">
+  <StripeProvider apiKey="pk_test_gJYPgpSqqzA7E1jlbFNlwTcH008IvBnjaf">
     <Elements>
       <CheckoutForm />
     </Elements>
