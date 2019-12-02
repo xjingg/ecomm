@@ -20,6 +20,7 @@
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "lodash": "^4.17.15",
     "start-mongodb": "^1.0.9",
     "strapi": "3.0.0-alpha.19",
