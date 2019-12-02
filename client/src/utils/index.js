@@ -1,48 +1,46 @@
-const CART_KEY = "cart";
-const TOKEN_KEY = "jwt";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { getToken } from './utils';
+import "gestalt/dist/gestalt.css";
 
-export const calculatePrice = items => {
-  return `$${items
-    .reduce((acc, item) => acc + item.quantity * item.price, 0)
-    .toFixed(2)}`;
-};
+import App from "./components/App";
+import Navbar from "./components/Navbar";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
+import Checkout from "./components/Checkout";
+import Perfumes from "./components/Perfumes";
 
-/* Cart */
-export const setCart = (value, cartKey = CART_KEY) => {
-  if (localStorage) {
-    localStorage.setItem(cartKey, JSON.stringify(value));
-  }
-};
+import registerServiceWorker from "./registerServiceWorker";
 
-export const getCart = (cartKey = CART_KEY) => {
-  if (localStorage && localStorage.getItem(cartKey)) {
-    return JSON.parse(localStorage.getItem(cartKey));
-  }
-  return [];
-};
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    getToken() !== null ?
+      <Component {...props} /> : <Redirect to={{
+        pathname: '/signin',
+        state: { from: props.location }
+      }} />
+  )} />
+)
 
-export const clearCart = (cartKey = CART_KEY) => {
-  if (localStorage) {
-    localStorage.removeItem(cartKey);
-  }
-};
+const Root = () => (
+  <Router>
+    <React.Fragment>
+      <Navbar />
+      <Switch>
+        <Route component={App} exact path="/" />
+        <Route component={Signin} path="/signin" />
+        <Route component={Signup} path="/signup" />
+        <PrivateRoute component={Checkout} path="/checkout" />
+        <Route component={Perfumes} path="/:brandId" />
+      </Switch>
+    </React.Fragment>
+  </Router>
+);
 
-/* Auth */
-export const getToken = (tokenKey = TOKEN_KEY) => {
-  if (localStorage && localStorage.getItem(tokenKey)) {
-    return JSON.parse(localStorage.getItem(tokenKey));
-  }
-  return null;
-};
+ReactDOM.render(<Root />, document.getElementById("root"));
+registerServiceWorker();
 
-export const setToken = (value, tokenKey = TOKEN_KEY) => {
-  if (localStorage) {
-    localStorage.setItem(tokenKey, JSON.stringify(value));
-  }
-};
-
-export const clearToken = (tokenKey = TOKEN_KEY) => {
-  if (localStorage) {
-    localStorage.removeItem(tokenKey);
-  }
-};
+if (module.hot) {
+  module.hot.accept();
+}
