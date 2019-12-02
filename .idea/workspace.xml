@@ -15,7 +15,7 @@
     <session id="-1376657464">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
@@ -62,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/config/environments/development/database.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="253">
+              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="12" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -89,14 +89,6 @@
     <handled-path value="$PROJECT_DIR$/server/plugins/settings-manager/node_modules" />
     <handled-path value="$PROJECT_DIR$/server/plugins/upload/node_modules" />
     <handled-path value="$PROJECT_DIR$/server/plugins/users-permissions/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/admin/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/content-manager/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/content-type-builder/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/email/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/settings-manager/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/upload/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/server/plugins/users-permissions/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -109,17 +101,9 @@
       <path value="$PROJECT_DIR$/server/plugins/settings-manager/package.json" />
       <path value="$PROJECT_DIR$/server/plugins/upload/package.json" />
       <path value="$PROJECT_DIR$/server/plugins/users-permissions/package.json" />
-      <path value="$PROJECT_DIR$/server/server/admin/package.json" />
-      <path value="$PROJECT_DIR$/server/server/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/content-manager/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/content-type-builder/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/email/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/settings-manager/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/upload/package.json" />
-      <path value="$PROJECT_DIR$/server/server/plugins/users-permissions/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="825" />
@@ -178,16 +162,24 @@
       <option name="presentableId" value="Default" />
       <updated>1574709033215</updated>
       <workItem from="1574709035390" duration="495000" />
-      <workItem from="1574710107094" duration="2559000" />
+      <workItem from="1574710107094" duration="2873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3054000" />
+    <option name="totallyTimeSpent" value="3368000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="825" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8466135" visible="true" weight="0.33403805" />
       <window_info id="Structure" order="1" sideWeight="0.15338646" side_tool="true" visible="true" weight="0.33403805" />
@@ -247,8 +239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/config/environments/development/database.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="253">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
