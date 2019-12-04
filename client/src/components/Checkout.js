@@ -110,7 +110,7 @@ class _CheckoutForm extends React.Component {
     return (
       <Container>
         <Box
-          color="darkWash"
+          color="white"
           margin={4}
           padding={4}
           shape="rounded"
@@ -120,7 +120,7 @@ class _CheckoutForm extends React.Component {
           direction="column"
         >
           {/* Checkout Form Heading */}
-          <Heading color="midnight">Checkout</Heading>
+          <Heading color="black">Checkout</Heading>
           {cartItems.length > 0 ? (
             <React.Fragment>
               {/* User Cart */}
@@ -204,8 +204,8 @@ class _CheckoutForm extends React.Component {
               <Heading align="center" color="watermelon" size="xs">
                 Your Cart is Empty
               </Heading>
-              <Text align="center" italic color="green">
-                Add some brews!
+              <Text align="center" italic color="darkGrey">
+                Pick some perfumes!
               </Text>
             </Box>
           )}

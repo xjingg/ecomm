@@ -103,7 +103,7 @@ class App extends Component {
         {/* Brands Section */}
         <Box display="flex" justifyContent="center" marginBottom={2}>
           {/* Brands Header */}
-          <Heading color="midnight" size="md">
+          <Heading color="darkGray" size="xs">
             Perfume Brands
           </Heading>
         </Box>

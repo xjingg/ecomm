@@ -61,7 +61,7 @@ class Signin extends React.Component {
         <Box
           dangerouslySetInlineStyle={{
             __style: {
-              backgroundColor: "#d6a3b1"
+              backgroundColor: "white"
             }
           }}
           margin={4}
@@ -81,7 +81,7 @@ class Signin extends React.Component {
           >
             {/* Sign In Form Heading */}
             <Box marginBottom={2}>
-              <Heading color="midnight">Welcome Back!</Heading>
+              <Heading color="darkGray">Welcome Back!</Heading>
             </Box>
 
             {/* Username Input */}

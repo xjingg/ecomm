@@ -62,7 +62,7 @@ class Signup extends React.Component {
         <Box
           dangerouslySetInlineStyle={{
             __style: {
-              backgroundColor: "#ebe2da"
+              backgroundColor: "white"
             }
           }}
           margin={4}
@@ -87,9 +87,9 @@ class Signup extends React.Component {
               direction="column"
               alignItems="center"
             >
-              <Heading color="midnight">Let's Get Started</Heading>
+              <Heading color="darkGray">Let's Get Started</Heading>
               <Text italic color="orchid">
-                Sign up to order some brews!
+                Sign up to order some perfumes!
               </Text>
             </Box>
             {/* Username Input */}
@@ -119,7 +119,7 @@ class Signup extends React.Component {
             <Button
               inline
               disabled={loading}
-              color="blue"
+              color="darkGray"
               text="Submit"
               type="submit"
             />

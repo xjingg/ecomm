@@ -25,7 +25,7 @@ const AuthNav = ({ handleSignout }) => (
     alignItems="center"
     justifyContent="around"
     height={70}
-    color="midnight"
+    color="darkGray"
     padding={1}
     shape="roundedBottom"
   >
@@ -48,7 +48,7 @@ const AuthNav = ({ handleSignout }) => (
           /> */}
         </Box>
         <div className="main-title">
-          <Heading size="md" color="black">
+          <Heading size="md" color="white">
             Perfume for Her
           </Heading>
         </div>
@@ -72,7 +72,7 @@ const UnAuthNav = () => (
     alignItems="center"
     justifyContent="around"
     height={70}
-    color="midnight"
+    color="darkGray"
     padding={1}
     shape="roundedBottom"
   >
@@ -86,18 +86,18 @@ const UnAuthNav = () => (
     {/* Title and Logo */}
     <NavLink activeClassName="active" exact to="/">
       <Box display="flex" alignItems="center">
-        <Box margin={2} height={50} width={50}>
+        {/* <Box margin={2} height={50} width={50}>
           <Image
-            alt="BrewHaha Logo"
+            alt="Perfumes"
             naturalHeight={1}
             naturalWidth={1}
             src="./icons/logo.svg"
           />
-        </Box>
+        </Box> */}
         {/* Title */}
         <div className="main-title">
-          <Heading size="xs" color="orange">
-            BrewHaha
+          <Heading size="xs" color="white">
+            Perfumes for Her
           </Heading>
         </div>
       </Box>
