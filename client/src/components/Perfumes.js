@@ -45,14 +45,14 @@ class Perfumes extends React.Component {
     }
   }
 
-  addToCart = brew => {
+  addToCart = perfume => {
     const alreadyInCart = this.state.cartItems.findIndex(
-      item => item._id === brew._id
+      item => item._id === perfume._id
     );
 
     if (alreadyInCart === -1) {
       const updatedItems = this.state.cartItems.concat({
-        ...brew,
+        ...perfume,
         quantity: 1
       });
       this.setState({ cartItems: updatedItems }, () => setCart(updatedItems));
@@ -89,13 +89,13 @@ class Perfumes extends React.Component {
         <Box display="flex" direction="column" alignItems="center">
           {/* Perfumes Heading */}
           <Box margin={2}>
-            <Heading color="orchid">{brand}</Heading>
+            <Heading color="black">{brand}</Heading>
           </Box>
-          {/* Perfumes*/}
+          {/* Perfumes */}
           <Box
             dangerouslySetInlineStyle={{
               __style: {
-                backgroundColor: "#bdcdd9"
+                backgroundColor: "#fff"
               }
             }}
             wrap
@@ -104,8 +104,8 @@ class Perfumes extends React.Component {
             justifyContent="center"
             padding={4}
           >
-            {perfumes.map(brew => (
-              <Box paddingY={4} margin={2} width={210} key={brew._id}>
+            {perfumes.map(perfume => (
+              <Box paddingY={4} margin={2} width={210} key={perfume._id}>
                 <Card
                   image={
                     <Box height={250} width={200}>
@@ -114,7 +114,7 @@ class Perfumes extends React.Component {
                         alt="Brand"
                         naturalHeight={1}
                         naturalWidth={1}
-                        src={`${apiUrl}${brew.image.url}`}
+                        src={`${apiUrl}${perfume.image.url}`}
                       />
                     </Box>
                   }
@@ -127,15 +127,15 @@ class Perfumes extends React.Component {
                   >
                     <Box marginBottom={2}>
                       <Text bold size="xl">
-                        {brew.name}
+                        {perfume.name}
                       </Text>
                     </Box>
-                    <Text>{brew.description}</Text>
-                    <Text color="orchid">${brew.price}</Text>
+                    <Text>{perfume.description}</Text>
+                    <Text color="orchid">${perfume.price}</Text>
                     <Box marginTop={2}>
                       <Text bold size="xl">
                         <Button
-                          onClick={() => this.addToCart(brew)}
+                          onClick={() => this.addToCart(perfume)}
                           color="blue"
                           text="Add to Cart"
                         />

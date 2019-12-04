@@ -5,7 +5,7 @@ type Brand {
   name: String
   description: String
   image: UploadFile
-  perfumes(sort: String, limit: Int, start: Int, where: JSON): [Perfume]
+  perfumes(sort: String, limit: Int, start: Int, where: JSON): [Perfumes]
 }
 
 type BrandAggregator {
@@ -80,12 +80,12 @@ type createOrdersPayload {
   order: Orders
 }
 
-input createPerfumeInput {
-  data: PerfumeInput
+input createPerfumesInput {
+  data: PerfumesInput
 }
 
-type createPerfumePayload {
-  perfume: Perfume
+type createPerfumesPayload {
+  perfume: Perfumes
 }
 
 input createRoleInput {
@@ -125,12 +125,12 @@ type deleteOrdersPayload {
   order: Orders
 }
 
-input deletePerfumeInput {
+input deletePerfumesInput {
   where: InputID
 }
 
-type deletePerfumePayload {
-  perfume: Perfume
+type deletePerfumesPayload {
+  perfume: Perfumes
 }
 
 input deleteRoleInput {
@@ -171,7 +171,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Brand | createBrandPayload | updateBrandPayload | deleteBrandPayload | BrandConnection | BrandAggregator | BrandGroupBy | BrandConnection_id | BrandConnectionCreatedAt | BrandConnectionUpdatedAt | BrandConnectionName | BrandConnectionDescription | BrandConnectionImage | Orders | createOrdersPayload | updateOrdersPayload | deleteOrdersPayload | OrdersConnection | OrdersAggregator | OrdersGroupBy | OrdersConnection_id | OrdersConnectionCreatedAt | OrdersConnectionUpdatedAt | OrdersConnectionAddress | OrdersConnectionPostalCode | OrdersConnectionCity | OrdersConnectionPerfumes | OrdersConnectionAmount | Perfume | createPerfumePayload | updatePerfumePayload | deletePerfumePayload | PerfumeConnection | PerfumeAggregator | PerfumeAggregatorSum | PerfumeAggregatorAvg | PerfumeAggregatorMin | PerfumeAggregatorMax | PerfumeGroupBy | PerfumeConnection_id | PerfumeConnectionCreatedAt | PerfumeConnectionUpdatedAt | PerfumeConnectionName | PerfumeConnectionDescription | PerfumeConnectionImage | PerfumeConnectionPrice | PerfumeConnectionBrand | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Brand | createBrandPayload | updateBrandPayload | deleteBrandPayload | BrandConnection | BrandAggregator | BrandGroupBy | BrandConnection_id | BrandConnectionCreatedAt | BrandConnectionUpdatedAt | BrandConnectionName | BrandConnectionDescription | BrandConnectionImage | Orders | createOrdersPayload | updateOrdersPayload | deleteOrdersPayload | OrdersConnection | OrdersAggregator | OrdersGroupBy | OrdersConnection_id | OrdersConnectionCreatedAt | OrdersConnectionUpdatedAt | OrdersConnectionAddress | OrdersConnectionPostalCode | OrdersConnectionCity | OrdersConnectionPerfumes | OrdersConnectionAmount | Perfumes | createPerfumesPayload | updatePerfumesPayload | deletePerfumesPayload | PerfumesConnection | PerfumesAggregator | PerfumesAggregatorSum | PerfumesAggregatorAvg | PerfumesAggregatorMin | PerfumesAggregatorMax | PerfumesGroupBy | PerfumesConnection_id | PerfumesConnectionCreatedAt | PerfumesConnectionUpdatedAt | PerfumesConnectionName | PerfumesConnectionDescription | PerfumesConnectionImage | PerfumesConnectionPrice | PerfumesConnectionBrand | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createBrand(input: createBrandInput): createBrandPayload
@@ -180,9 +180,9 @@ type Mutation {
   createOrders(input: createOrdersInput): createOrdersPayload
   updateOrders(input: updateOrdersInput): updateOrdersPayload
   deleteOrders(input: deleteOrdersInput): deleteOrdersPayload
-  createPerfume(input: createPerfumeInput): createPerfumePayload
-  updatePerfume(input: updatePerfumeInput): updatePerfumePayload
-  deletePerfume(input: deletePerfumeInput): deletePerfumePayload
+  createPerfumes(input: createPerfumesInput): createPerfumesPayload
+  updatePerfumes(input: updatePerfumesInput): updatePerfumesPayload
+  deletePerfumes(input: deletePerfumesInput): deletePerfumesPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -278,7 +278,7 @@ input OrdersInput {
   amount: Float!
 }
 
-type Perfume {
+type Perfumes {
   _id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
@@ -289,88 +289,88 @@ type Perfume {
   brand: Brand
 }
 
-type PerfumeAggregator {
+type PerfumesAggregator {
   count: Int
-  sum: PerfumeAggregatorSum
-  avg: PerfumeAggregatorAvg
-  min: PerfumeAggregatorMin
-  max: PerfumeAggregatorMax
+  sum: PerfumesAggregatorSum
+  avg: PerfumesAggregatorAvg
+  min: PerfumesAggregatorMin
+  max: PerfumesAggregatorMax
 }
 
-type PerfumeAggregatorAvg {
+type PerfumesAggregatorAvg {
   price: Float
 }
 
-type PerfumeAggregatorMax {
+type PerfumesAggregatorMax {
   price: Float
 }
 
-type PerfumeAggregatorMin {
+type PerfumesAggregatorMin {
   price: Float
 }
 
-type PerfumeAggregatorSum {
+type PerfumesAggregatorSum {
   price: Float
 }
 
-type PerfumeConnection {
-  values: [Perfume]
-  groupBy: PerfumeGroupBy
-  aggregate: PerfumeAggregator
+type PerfumesConnection {
+  values: [Perfumes]
+  groupBy: PerfumesGroupBy
+  aggregate: PerfumesAggregator
 }
 
-type PerfumeConnection_id {
+type PerfumesConnection_id {
   key: ID
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionBrand {
+type PerfumesConnectionBrand {
   key: ID
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionCreatedAt {
+type PerfumesConnectionCreatedAt {
   key: DateTime
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionDescription {
+type PerfumesConnectionDescription {
   key: String
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionImage {
+type PerfumesConnectionImage {
   key: ID
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionName {
+type PerfumesConnectionName {
   key: String
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionPrice {
+type PerfumesConnectionPrice {
   key: Float
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeConnectionUpdatedAt {
+type PerfumesConnectionUpdatedAt {
   key: DateTime
-  connection: PerfumeConnection
+  connection: PerfumesConnection
 }
 
-type PerfumeGroupBy {
-  _id: [PerfumeConnection_id]
-  createdAt: [PerfumeConnectionCreatedAt]
-  updatedAt: [PerfumeConnectionUpdatedAt]
-  name: [PerfumeConnectionName]
-  description: [PerfumeConnectionDescription]
-  image: [PerfumeConnectionImage]
-  price: [PerfumeConnectionPrice]
-  brand: [PerfumeConnectionBrand]
+type PerfumesGroupBy {
+  _id: [PerfumesConnection_id]
+  createdAt: [PerfumesConnectionCreatedAt]
+  updatedAt: [PerfumesConnectionUpdatedAt]
+  name: [PerfumesConnectionName]
+  description: [PerfumesConnectionDescription]
+  image: [PerfumesConnectionImage]
+  price: [PerfumesConnectionPrice]
+  brand: [PerfumesConnectionBrand]
 }
 
-input PerfumeInput {
+input PerfumesInput {
   name: String
   description: String
   image: ID
@@ -385,9 +385,9 @@ type Query {
   order(id: ID!): Orders
   orders(sort: String, limit: Int, start: Int, where: JSON): [Orders]
   ordersConnection(sort: String, limit: Int, start: Int, where: JSON): OrdersConnection
-  perfume(id: ID!): Perfume
-  perfumes(sort: String, limit: Int, start: Int, where: JSON): [Perfume]
-  perfumesConnection(sort: String, limit: Int, start: Int, where: JSON): PerfumeConnection
+  perfume(id: ID!): Perfumes
+  perfumes(sort: String, limit: Int, start: Int, where: JSON): [Perfumes]
+  perfumesConnection(sort: String, limit: Int, start: Int, where: JSON): PerfumesConnection
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!): UsersPermissionsRole
@@ -429,13 +429,13 @@ type updateOrdersPayload {
   order: Orders
 }
 
-input updatePerfumeInput {
+input updatePerfumesInput {
   where: InputID
-  data: PerfumeInput
+  data: PerfumesInput
 }
 
-type updatePerfumePayload {
-  perfume: Perfume
+type updatePerfumesPayload {
+  perfume: Perfumes
 }
 
 input updateRoleInput {

@@ -72,5 +72,3 @@ if (process.env.npm_config_plugins === 'true') {
       shell.echo('');
     });
 }
-
-mongoose.connect(mongoConnectionString, {useUnifiedTopology: true});

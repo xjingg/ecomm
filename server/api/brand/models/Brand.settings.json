@@ -24,7 +24,7 @@
       "required": false
     },
     "perfumes": {
-      "collection": "perfume",
+      "collection": "perfumes",
       "via": "brand"
     }
   }

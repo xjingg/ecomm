@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Perfume.js service
+ * Perfumes.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -19,14 +19,14 @@ module.exports = {
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('perfume', params);
+    const filters = strapi.utils.models.convertParams('perfumes', params);
     // Select field to populate.
-    const populate = Perfume.associations
+    const populate = Perfumes.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Perfume
+    return Perfumes
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,20 +36,20 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an perfume.
+   * Promise to fetch a/an perfumes.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Perfume.associations
+    const populate = Perfumes.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Perfume
-      .findOne(_.pick(params, _.keys(Perfume.schema.paths)))
+    return Perfumes
+      .findOne(_.pick(params, _.keys(Perfumes.schema.paths)))
       .populate(populate);
   },
 
@@ -61,65 +61,65 @@ module.exports = {
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('perfume', params);
+    const filters = strapi.utils.models.convertParams('perfumes', params);
 
-    return Perfume
+    return Perfumes
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an perfume.
+   * Promise to add a/an perfumes.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Perfume.associations.map(ast => ast.alias));
-    const data = _.omit(values, Perfume.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Perfumes.associations.map(ast => ast.alias));
+    const data = _.omit(values, Perfumes.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Perfume.create(data);
+    const entry = await Perfumes.create(data);
 
     // Create relational data and return the entry.
-    return Perfume.updateRelations({ _id: entry.id, values: relations });
+    return Perfumes.updateRelations({ _id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an perfume.
+   * Promise to edit a/an perfumes.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Perfume.associations.map(a => a.alias));
-    const data = _.omit(values, Perfume.associations.map(a => a.alias));
+    const relations = _.pick(values, Perfumes.associations.map(a => a.alias));
+    const data = _.omit(values, Perfumes.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Perfume.update(params, data, { multi: true });
+    const entry = await Perfumes.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Perfume.updateRelations(Object.assign(params, { values: relations }));
+    return Perfumes.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an perfume.
+   * Promise to remove a/an perfumes.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Perfume.associations
+    const populate = Perfumes.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Perfume
+    const data = await Perfumes
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Perfume.associations.map(async association => {
+      Perfumes.associations.map(async association => {
         if (!association.via || !data._id) {
           return true;
         }
@@ -149,22 +149,22 @@ module.exports = {
   },
 
   /**
-   * Promise to search a/an perfume.
+   * Promise to search a/an perfumes.
    *
    * @return {Promise}
    */
 
   search: async (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('perfume', params);
+    const filters = strapi.utils.models.convertParams('perfumes', params);
     // Select field to populate.
-    const populate = Perfume.associations
+    const populate = Perfumes.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    const $or = Object.keys(Perfume.attributes).reduce((acc, curr) => {
-      switch (Perfume.attributes[curr].type) {
+    const $or = Object.keys(Perfumes.attributes).reduce((acc, curr) => {
+      switch (Perfumes.attributes[curr].type) {
         case 'integer':
         case 'float':
         case 'decimal':
@@ -188,7 +188,7 @@ module.exports = {
       }
     }, []);
 
-    return Perfume
+    return Perfumes
       .find({ $or })
       .sort(filters.sort)
       .skip(filters.start)

@@ -12,7 +12,6 @@
     "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
   },
   "devDependencies": {
-    "@types/stripe": "^7.13.11",
     "babel-eslint": "^7.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^13.0.0",
@@ -20,9 +19,7 @@
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
-    "babel": "^6.23.0",
-    "lodash": "^4.17.15",
-    "start-mongodb": "^1.0.9",
+    "lodash": "^4.17.5",
     "strapi": "3.0.0-alpha.19",
     "strapi-hook-mongoose": "3.0.0-alpha.19",
     "stripe": "^7.14.0"
@@ -41,7 +38,7 @@
   ],
   "strapi": {
     "packageManager": "npm",
-    "uuid": "79405415-203c-4975-8228-07ca67fa49b0"
+    "uuid": "999c0a1d-0a76-4f83-b7f4-c210bc58ebd5"
   },
   "engines": {
     "node": ">= 10.0.0",

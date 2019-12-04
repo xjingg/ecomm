@@ -75,15 +75,5 @@
     "start": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=development PORT=4000 IS_ADMIN=true node ./node_modules/strapi-helper-plugin/lib/server",
     "test": "echo \"Error: no test specified\""
   },
-  "version": "3.0.0-alpha.19",
-  "warnings": [
-    {
-      "code": "ENOTSUP",
-      "required": {
-        "node": ">= 10.0.0",
-        "npm": ">= 6.0.0"
-      },
-      "pkgid": "strapi-admin@3.0.0-alpha.19"
-    }
-  ]
+  "version": "3.0.0-alpha.19"
 }
